@@ -1,17 +1,18 @@
 function carouseReviews() {
+    const previousBtn = document.getElementById("previous");
+    const nextBtn = document.getElementById("next");
+    const reviewImg = document.getElementById("review");
     let curReview = 0;
-    function changeReview() {
-        if (curReview === 2) curReview = 0;
 
-        document.getElementById(
-            "carousell"
-        ).innerHTML = `<img class="review" src="./assets/images/reviews/${curReview}.png" alt="Review #${curReview}"/>`;
+    previousBtn.addEventListener("click", () => {
+        curReview = --curReview;
+        reviewImg.src = `./assets/images/reviews/${curReview}.png`;
+    });
 
+    nextBtn.addEventListener("click", () => {
         curReview = ++curReview;
-    }
-
-    changeReview();
-    setInterval(changeReview, 5000);
+        reviewImg.src = `./assets/images/reviews/${curReview}.png`;
+    });
 }
 
 function redirect() {

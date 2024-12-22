@@ -1,7 +1,7 @@
 :root {
     --border: #dcddde;
     --background: #282828;
-    --card-bg: rgb(0, 0, 0, 0.6);
+    --card-bg: rgba(0, 0, 0, 0.6);
     --highlight: rgba(255, 0, 34, 0.614);
     --text-light: #888888;
     --btn-bg: #ff0022;
@@ -18,6 +18,11 @@ u {
     cursor: help;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 *,
 *::before,
 *::after {
@@ -29,13 +34,9 @@ u {
 body {
     background-color: var(--background);
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(assets/images/background.png);
     color: var(--border);
     margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .head {
@@ -52,55 +53,66 @@ a {
     right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
+    z-index: 1000;
 }
 
 .head a {
-    margin: 0 15px;
-    font-size: 1rem;
-    color: #fff;
     font-weight: bold;
+    color: #fff;
+    margin: 0 5px;
 }
 
 .main {
-    margin-top: 4%;
+    margin-top: 8rem;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    padding: 0 1rem;
 }
 
 .reviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 4rem
+    text-align: center;
+    margin: 8rem 0;
+    width: 100%;
+    padding: 0 1rem;
 }
 
-.reviews .review img {
-    height: 50%;
-    width: 50%
+.reviews .switcher {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews .review {
+    width: 100%;
+    max-width: 600px;
+}
+
+.reviews .review .btn {
+    height: 100%;
 }
 
 .offers {
-    gap: 50px;
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
     margin: 20px 0;
+    padding: 0 1rem;
 }
 
 .offer {
     overflow: hidden;
-    width: 400px;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 400px;
     padding: 15px;
     display: flex;
-    border-radius: 5px;
     flex-direction: column;
     border: 1px solid var(--border);
-    background: radial-gradient();
+    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: space-evenly;
@@ -112,20 +124,19 @@ a {
 
 .offer .cover {
     width: 100%;
-    object-fit: contain;
-    height: 180px;
+    height: 50%;
+    max-height: 200px;
 }
 
 .offer .title {
     font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .offer .features {
     list-style: disc;
     font-size: 0.9rem;
     color: var(--text-light);
-    margin-bottom: 15px;
     padding-left: 20px;
 }
 
@@ -134,7 +145,6 @@ a {
 }
 
 .btn.purchase-btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: var(--btn-bg);
     color: var(--btn-text);
@@ -147,19 +157,59 @@ a {
 }
 
 .btn.purchase-btn:hover {
-    background: rgba(255, 0, 34, 60%);
+    background: var(--highlight);
 }
 
 .feet {
-    padding: 15px;
+    padding: 10px;
     background-color: var(--background);
     color: var(--text-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
+    margin: 10px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .head a {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .main {
+        margin-top: 10rem;
+    }
+
+    .offer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .head {
+        padding: 10px;
+    }
+
+    .head a {
+        font-size: 0.9rem;
+    }
+
+    .offer .title {
+        font-size: 1rem;
+    }
+
+    .offer .features {
+        font-size: 0.8rem;
+    }
+
+    .btn.purchase-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
 }
