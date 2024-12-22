@@ -2,8 +2,8 @@
     --border: #dcddde;
     --background: #282828;
     --card-bg: rgba(0, 0, 0, 0.6);
-    --highlight: rgba(255, 0, 34, 0.614);
-    --text-light: #888888;
+    --highlight: rgba(255, 0, 34, 0.7);
+    --text-light: #aaaaaa;
     --btn-bg: #ff0022;
     --btn-text: #ffffff;
 }
@@ -14,6 +14,12 @@
     src: url(./assets/fonts/pricedown_bl.ttf);
 }
 
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 u {
     cursor: help;
 }
@@ -21,6 +27,11 @@ u {
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight);
 }
 
 *,
@@ -33,7 +44,7 @@ a {
 
 body {
     background-color: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Montserrat, sans-serif, Arial;
     background-image: url(assets/images/background.png);
     color: var(--border);
     margin: 0;
@@ -42,10 +53,11 @@ body {
 .head {
     margin: auto;
     width: 40%;
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: var(--highlight);
     position: fixed;
     top: 0;
@@ -53,28 +65,26 @@ body {
     right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .head a {
     font-weight: bold;
     color: #fff;
-    margin: 0 5px;
+    margin: 0 10px;
+    font-size: 1.1rem;
 }
 
-.main {
-    margin-top: 8rem;
+section {
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
 }
 
-.reviews {
-    text-align: center;
-    margin: 8rem 0;
-    width: 100%;
-    padding: 0 1rem;
+footer {
+    display: flex;
+    background-color: var(--background);
 }
 
 .reviews .switcher {
@@ -82,15 +92,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 .reviews .review {
     width: 100%;
     max-width: 600px;
+    max-height: 400px;
+    height: 100%;
 }
 
-.reviews .review .btn {
+.reviews .btn {
     height: 100%;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reviews .btn:hover {
+    background-color: var(--highlight);
 }
 
 .offers {
@@ -104,10 +128,8 @@ body {
 }
 
 .offer {
-    overflow: hidden;
-    text-overflow: ellipsis;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -115,17 +137,23 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    background-color: var(--card-bg);
 }
 
 .offer:hover {
+    transform: translateY(-2px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.offer .cover {
+.cover {
     width: 100%;
-    height: 50%;
-    max-height: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, var(--btn-bg), var(--background));
+    color: var(--btn-text);
 }
 
 .offer .title {
@@ -152,28 +180,34 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-family: PriceDownBl;
+    text-transform: uppercase;
 }
 
 .btn.purchase-btn:hover {
-    background: var(--highlight);
+    background-color: var(--highlight);
 }
 
-.feet {
-    padding: 10px;
-    background-color: var(--background);
-    color: var(--text-light);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+@media (max-width: 1024px) {
+    .head {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main {
+        margin-top: 8rem;
+    }
+
+    .offer {
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 768px) {
     .head {
         flex-direction: column;
+        align-items: center;
         padding: 15px;
     }
 
@@ -182,12 +216,16 @@ body {
         font-size: 1rem;
     }
 
-    .main {
-        margin-top: 10rem;
+    .offer {
+        width: 90%;
     }
 
-    .offer {
-        width: 100%;
+    .offer .title {
+        font-size: 1.1rem;
+    }
+
+    .offer .features {
+        font-size: 0.85rem;
     }
 }
 

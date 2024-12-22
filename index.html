@@ -13,33 +13,44 @@
         <meta
             name="keywords"
             lang="en"
-            content="gta,money,modding,mod,modder,lift,lifting,level,lifter,boost,money,levels,rp"
+            content="gta, money, modding, mod, modder, lift, lifting, level, lifter, boost, money, levels, rp"
         />
+        <meta name="author" content="Your Name or Business Name" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#282828" />
 
         <link rel="icon" href="assets/images/icon.png" />
+        <link rel="apple-touch-icon" href="assets/images/icon.png" />
         <link rel="stylesheet" href="main.css" />
+        <link
+            rel="preload"
+            href="./assets/fonts/pricedown_bl.ttf"
+            as="font"
+            type="font/ttf"
+            crossorigin="anonymous"
+        />
 
         <title>Boost+</title>
     </head>
     <body>
         <header class="head links">
             <a href="#offers">Offers</a>
+            <a href="#reviews">FAQ</a>
             <a href="#reviews">Reviews</a>
             <a href="https://discord.gg/RUBwVP9B57" class="discord btn">
                 Discord
             </a>
         </header>
-        <section class="main">
+        <section class="main" id="offers">
             <h1>GTA Online PC Packages</h1>
-            <!-- <ul class="platforms">
-                <li>Steam</li>
-                <li>Rockstar Games</li>
-                <li>Epic Games</li>
-            </ul> -->
             <div class="offers" id="offers">
                 <div class="offer">
-                    <div class="title">10$ Basic</div>
-                    <img src="assets/images/basic.png" alt="Basic Cover" class="cover" />
+                    <div class="title">$9.99 Basic</div>
+                    <img
+                        src="assets/images/basic.png"
+                        alt="Basic Cover"
+                        class="cover"
+                    />
                     <ul class="features content">
                         <li>💲 $15,000,000</li>
                         <li>🌐 Any level 1-1000</li>
@@ -67,8 +78,12 @@ Ammu-Nation Tints"
                     </button>
                 </div>
                 <div class="offer">
-                    <div class="title">15$ Regular</div>
-                    <img src="assets/images/regular.png" alt="Regular Cover" class="cover" />
+                    <div class="title">$14.99 Regular</div>
+                    <img
+                        src="assets/images/regular.png"
+                        alt="Regular Cover"
+                        class="cover"
+                    />
                     <ul class="features content">
                         <li>💲 $30,000,000</li>
                         <li>🌐 Any level 1-3000</li>
@@ -97,8 +112,12 @@ Ammu-Nation Tints"
                     </button>
                 </div>
                 <div class="offer">
-                    <div class="title">20$ Ultimate</div>
-                    <img src="assets/images/ultimate.png" alt="Ultimate Cover" class="cover" />
+                    <div class="title">$19.99 Ultimate</div>
+                    <img
+                        src="assets/images/ultimate.png"
+                        alt="Ultimate Cover"
+                        class="cover"
+                    />
                     <ul class="features content">
                         <li>💲 $100,000,000</li>
                         <li>🌐 Any level 1-8000</li>
@@ -127,15 +146,37 @@ Ammu-Nation Tints"
                 </div>
             </div>
         </section>
-        <section class="reviews" id="carousell">
+        <section class="reviews" id="reviews">
             <h1>Reviews</h1>
             <div class="switcher">
-            <button class="btn" id="previous">&lt;</button>
-            <img class="review" id="review" src="assets/images/reviews/0.png">
-            <button class="btn" id="next">&gt;</button></div>
+                <button class="btn" id="previous">&lt;</button>
+                <img
+                    class="review"
+                    id="review"
+                    src="assets/images/reviews/0.png"
+                />
+                <button class="btn" id="next">&gt;</button>
+            </div>
         </section>
-        <footer class="feet">
-            <div class="credits">Site made by centric :)</div>
+        <section class="faq" id="faq">
+            <h1>Frequently Asked Questions</h1>
+            <details>
+                <summary>How long does it take?</summary>
+                It depends on which package you requested. It may vary from 15
+                minutes to an hour.
+            </details>
+            <details>
+                <summary>How does it work?</summary>
+                It's like magic. Fr... We use mod menus to deliver the highest
+                quality, undetected progression and money.
+            </details>
+            <details>
+                <summary>Will I get banned?</summary>
+                Absolutely not. There is no risk for ban whatsoever.
+            </details>
+        </section>
+        <footer>
+            
         </footer>
 
         <script src="main.js"></script>
