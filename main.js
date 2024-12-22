@@ -1,11 +1,11 @@
 function carouseReviews() {
     let curReview = 0;
     function changeReview() {
-        if (curReview === 4) curReview = 0;
+        if (curReview === 2) curReview = 0;
 
         document.getElementById(
             "carousell"
-        ).innerHTML = `<img class="review" src="./images/reviews/${curReview}.png" alt="Review #${curReview}"/>`;
+        ).innerHTML = `<img class="review" src="./assets/images/reviews/${curReview}.png" alt="Review #${curReview}"/>`;
 
         curReview = ++curReview;
     }
@@ -15,9 +15,8 @@ function carouseReviews() {
 }
 
 function redirect() {
-    location.href = "https://discord.gg/jm9HBEbupm";
+    location.href = "https://discord.gg/RUBwVP9B57";
 }
-
 
 function main() {
     carouseReviews();

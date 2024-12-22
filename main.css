@@ -14,6 +14,10 @@
     src: url(./assets/fonts/pricedown_bl.ttf);
 }
 
+u {
+    cursor: help;
+}
+
 *,
 *::before,
 *::after {
@@ -26,7 +30,6 @@ body {
     background-color: var(--background);
     font-family: Arial, Helvetica, sans-serif;
     color: var(--border);
-    line-height: 1.5;
     margin: 0;
 }
 
@@ -43,7 +46,6 @@ a {
     justify-content: space-around;
     padding: 10px;
     background-color: var(--highlight);
-    font-family: PriceDownBl;
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +62,7 @@ a {
 }
 
 .main {
-    margin-top: 10%;
+    margin-top: 4%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -69,18 +71,16 @@ a {
 }
 
 .reviews {
-    margin-top: 10%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 50%;
+    margin-top: 4rem
 }
 
-.reviews .review {
-    height: 100%;
-    width: 100%;
+.reviews .review img {
+    height: 50%;
+    width: 50%
 }
 
 .offers {
@@ -112,8 +112,8 @@ a {
 
 .offer .cover {
     width: 100%;
+    object-fit: contain;
     height: 180px;
-    object-fit: cover;
 }
 
 .offer .title {
@@ -143,7 +143,7 @@ a {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    font-family: PriceDownBl
+    font-family: PriceDownBl;
 }
 
 .btn.purchase-btn:hover {
