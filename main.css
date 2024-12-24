@@ -1,11 +1,18 @@
 :root {
-    --border: #dcddde;
-    --background: #282828;
+    --background: #1e1e1e;
+    --background-muted: rgba(0, 0, 0, 20%);
     --card-bg: rgba(0, 0, 0, 0.6);
     --highlight: rgba(255, 0, 34, 0.7);
+    --text-default: #dcddde;
     --text-light: #aaaaaa;
     --btn-bg: #ff0022;
     --btn-text: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: var(--text-primary);
+    }
 }
 
 @font-face {
@@ -25,13 +32,18 @@ u {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 400ms;
 }
 
 a:hover {
-    color: var(--highlight);
+    text-decoration-color: var(--text-default);
+}
+
+h1 {
+    margin-bottom: 20px;
 }
 
 *,
@@ -45,12 +57,11 @@ a:hover {
 body {
     background-color: var(--background);
     font-family: Montserrat, sans-serif, Arial;
-    background-image: url(assets/images/background.png);
-    color: var(--border);
+    color: var(--text-default);
     margin: 0;
 }
 
-.head {
+header {
     margin: auto;
     width: 40%;
     max-width: 1200px;
@@ -68,49 +79,82 @@ body {
     z-index: 999;
 }
 
-.head a {
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header a {
+    margin: 0 1rem;
     font-weight: bold;
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.1rem;
 }
 
 section {
-    margin-top: 6rem;
+    margin: 5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-footer {
-    display: flex;
-    background-color: var(--background);
+details {
+    margin: 8px 0;
+    background-color: #171614;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
-.reviews .switcher {
-    height: 200px;
+.switcher {
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px
 }
 
-.reviews .review {
+.review {
     width: 100%;
     max-width: 600px;
     max-height: 400px;
     height: 100%;
+    border-radius: 4px;
 }
 
-.reviews .btn {
-    height: 100%;
-    border: none;
-    padding: 4px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.2);
+section h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-soft);
+}
+
+.switcher .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--btn-text);
+    background-color: var(--btn-bg);
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.switcher .btn:disabled {
+    background-color: var(--background-muted);
+    cursor: not-allowed;
 }
 
 .reviews .btn:hover {
@@ -123,22 +167,21 @@ footer {
     justify-content: center;
     gap: 20px;
     width: 100%;
-    margin: 20px 0;
     padding: 0 1rem;
 }
 
 .offer {
-    width: 100%;
-    max-width: 350px;
+    height: 280px;
+    width: 280px;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-light);
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: space-around;
-    background-color: var(--card-bg);
+    background-color: rgba(0, 0, 0, 45%);
 }
 
 .offer:hover {
@@ -149,16 +192,24 @@ footer {
 .cover {
     width: 100%;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: contain;
     background: radial-gradient(circle, var(--btn-bg), var(--background));
     color: var(--btn-text);
 }
 
-.offer .title {
-    font-size: 1.25rem;
+.offer .pkg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer .pkg .desc {
     font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.offer .pkg .price {
+    font-size: 0.8rem;
+    color: #118c4f;
 }
 
 .offer .features {
@@ -169,10 +220,10 @@ footer {
 }
 
 .offer .features li {
-    margin: 5px 0;
+    margin: 9px 0;
 }
 
-.btn.purchase-btn {
+.purchase-btn {
     padding: 10px 20px;
     background-color: var(--btn-bg);
     color: var(--btn-text);
@@ -185,7 +236,7 @@ footer {
     text-transform: uppercase;
 }
 
-.btn.purchase-btn:hover {
+.purchase-btn:hover {
     background-color: var(--highlight);
 }
 
@@ -195,8 +246,8 @@ footer {
         justify-content: center;
     }
 
-    .main {
-        margin-top: 8rem;
+    section {
+        margin: 8rem 0;
     }
 
     .offer {
@@ -206,18 +257,23 @@ footer {
 
 @media (max-width: 768px) {
     .head {
+        display: none;
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        padding: 8px;
     }
 
     .head a {
         margin: 5px 0;
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    section {
+        margin: 8rem 0;
     }
 
     .offer {
-        width: 90%;
+        width: 100%;
     }
 
     .offer .title {
@@ -231,6 +287,8 @@ footer {
 
 @media (max-width: 480px) {
     .head {
+        display: none;
+        flex-direction: column;
         padding: 10px;
     }
 

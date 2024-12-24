@@ -2,23 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimal-ui"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="centric" />
         <meta
             name="description"
-            content="Level lifting, account modding, money boosts and more!"
+            content="Level lifting, account modding, money boosts, and more for GTA Online!"
         />
         <meta
             name="keywords"
-            lang="en"
-            content="gta, money, modding, mod, modder, lift, lifting, level, lifter, boost, money, levels, rp"
+            content="GTA, money, modding, mod, modder, lift, lifting, level, lifter, boost, levels, RP, offers"
         />
-        <meta name="author" content="Your Name or Business Name" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#282828" />
-
         <link rel="icon" href="assets/images/icon.png" />
         <link rel="apple-touch-icon" href="assets/images/icon.png" />
         <link rel="stylesheet" href="main.css" />
@@ -29,29 +24,31 @@
             type="font/ttf"
             crossorigin="anonymous"
         />
-
+        <link
+            rel="preload"
+            href="./assets/fonts/Montserrat-VariableFont_wght.ttf"
+            as="font"
+            type="font/ttf"
+            crossorigin="anonymous"
+        />
         <title>Boost+</title>
     </head>
     <body>
-        <header class="head links">
+        <header>
             <a href="#offers">Offers</a>
             <a href="#reviews">FAQ</a>
             <a href="#reviews">Reviews</a>
-            <a href="https://discord.gg/RUBwVP9B57" class="discord btn">
-                Discord
-            </a>
+            <a href="#" onclick="redirect()" class="discord btn"> Discord </a>
         </header>
-        <section class="main" id="offers">
+        <section>
             <h1>GTA Online PC Packages</h1>
-            <div class="offers" id="offers">
+            <div class="offers">
                 <div class="offer">
-                    <div class="title">$9.99 Basic</div>
-                    <img
-                        src="assets/images/basic.png"
-                        alt="Basic Cover"
-                        class="cover"
-                    />
-                    <ul class="features content">
+                    <div class="pkg">
+                        <span class="desc">Basic</span>
+                        <span class="price">$9.99</span>
+                    </div>
+                    <ul class="features">
                         <li>💲 $15,000,000</li>
                         <li>🌐 Any level 1-1000</li>
                         <li
@@ -71,20 +68,19 @@ Ammu-Nation Tints"
                             <u>🔓 All unlocks</u>
                         </li>
 
-                        <li>🚗 3 modded cars</li>
+                        <li>🚗 5 modded cars</li>
+                        <li>👔 3 modded outfits</li>
                     </ul>
                     <button class="btn purchase-btn" onclick="redirect()">
                         Purchase
                     </button>
                 </div>
                 <div class="offer">
-                    <div class="title">$14.99 Regular</div>
-                    <img
-                        src="assets/images/regular.png"
-                        alt="Regular Cover"
-                        class="cover"
-                    />
-                    <ul class="features content">
+                    <div class="pkg">
+                        <span class="desc">Regular</span>
+                        <span class="price">$14.99</span>
+                    </div>
+                    <ul class="features">
                         <li>💲 $30,000,000</li>
                         <li>🌐 Any level 1-3000</li>
                         <li
@@ -104,21 +100,19 @@ Ammu-Nation Tints"
                             <u>🔓 All unlocks</u>
                         </li>
 
-                        <li>👔 3 modded outfits</li>
                         <li>🚗 5 modded cars</li>
+                        <li>👔 3 modded outfits</li>
                     </ul>
                     <button class="btn purchase-btn" onclick="redirect()">
                         Purchase
                     </button>
                 </div>
                 <div class="offer">
-                    <div class="title">$19.99 Ultimate</div>
-                    <img
-                        src="assets/images/ultimate.png"
-                        alt="Ultimate Cover"
-                        class="cover"
-                    />
-                    <ul class="features content">
+                    <div class="pkg">
+                        <span class="desc">Ultimate</span>
+                        <span class="price">$19.99</span>
+                    </div>
+                    <ul class="features">
                         <li>💲 $100,000,000</li>
                         <li>🌐 Any level 1-8000</li>
                         <li
@@ -137,8 +131,8 @@ Ammu-Nation Tints"
                         >
                             <u>🔓 All unlocks</u>
                         </li>
+                        <li>🚗 5 modded cars</li>
                         <li>👔 3 modded outfits</li>
-                        <li>🚗 10 modded cars</li>
                     </ul>
                     <button class="btn purchase-btn" onclick="redirect()">
                         Purchase
@@ -146,7 +140,7 @@ Ammu-Nation Tints"
                 </div>
             </div>
         </section>
-        <section class="reviews" id="reviews">
+        <section>
             <h1>Reviews</h1>
             <div class="switcher">
                 <button class="btn" id="previous">&lt;</button>
@@ -175,10 +169,6 @@ Ammu-Nation Tints"
                 Absolutely not. There is no risk for ban whatsoever.
             </details>
         </section>
-        <footer>
-            
-        </footer>
-
         <script src="main.js"></script>
     </body>
 </html>
