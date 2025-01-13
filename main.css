@@ -18,32 +18,28 @@
 @font-face {
     font-display: swap;
     font-family: "PriceDownBl";
-    src: url(./assets/fonts/pricedown_bl.ttf);
+    src: url(assets/fonts/pricedown_bl.ttf);
 }
 
 @font-face {
     font-display: swap;
     font-family: "Montserrat";
-    src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf);
+    src: url(assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 u {
     cursor: help;
 }
 
-a {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    transition: 400ms;
+::-webkit-scrollbar {
+    background-color: var(--background-muted);
+    border-radius: 8px;
+    width: 4px;
 }
 
-a:hover {
-    text-decoration-color: var(--text-default);
-}
-
-h1 {
-    margin-bottom: 20px;
+::-webkit-scrollbar-thumb {
+    background-color: var(--btn-bg);
+    border-radius: 8px;
 }
 
 *,
@@ -58,169 +54,95 @@ body {
     background-color: var(--background);
     font-family: Montserrat, sans-serif, Arial;
     color: var(--text-default);
+    overflow: hidden scroll;
     margin: 0;
 }
 
+/** Header Section **/
 header {
     margin: auto;
-    width: 40%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 20px;
+    padding: 10px 25px;
     background-color: var(--highlight);
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    display: flex;
+    justify-content: space-around;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
-    z-index: 999;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
+    width: 35%;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 header a {
-    margin: 0 1rem;
     font-weight: bold;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    overflow: hidden;
+    color: inherit;
 }
 
-section {
-    margin: 8rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+header a:hover,
+header a:focus {
+    text-decoration: underline var(--btn-text);
 }
 
-details {
-    margin: 8px 0;
-    background-color: #171614;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px var(--shadow);
-}
-
-.switcher {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px
-}
-
-.review {
-    width: 100%;
-    max-width: 600px;
-    max-height: 400px;
-    height: 100%;
-    border-radius: 4px;
-}
-
-section h1 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-}
-
-.switcher {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
-    background: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-soft);
-}
-
-.switcher .btn {
-    padding: 10px 20px;
+h1 {
     font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--btn-text);
-    background-color: var(--btn-bg);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.switcher .btn:disabled {
-    background-color: var(--background-muted);
-    cursor: not-allowed;
-}
-
-.reviews .btn:hover {
-    background-color: var(--highlight);
-}
-
-.offers {
+/** Packages Section **/
+.packages {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    width: 100%;
     padding: 0 1rem;
+    gap: 1rem;
 }
 
-.offer {
-    height: 280px;
-    width: 280px;
-    padding: 15px;
+.pack {
+    height: 16rem;
+    width: 16rem;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--text-light);
-    border-radius: 5px;
+    justify-content: space-between;
+    border-radius: 3px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    justify-content: space-around;
+    border: 1px solid var(--text-default);
     background-color: rgba(0, 0, 0, 45%);
+    margin: 0 auto;
 }
 
-.offer:hover {
-    transform: translateY(-2px);
+.pack:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.cover {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    background: radial-gradient(circle, var(--btn-bg), var(--background));
-    color: var(--btn-text);
-}
-
-.offer .pkg {
+.pack .title {
     display: flex;
     justify-content: space-between;
-}
-
-.offer .pkg .desc {
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-.offer .pkg .price {
+.pack .price {
     font-size: 0.8rem;
+    font-weight: normal;
     color: #118c4f;
 }
 
-.offer .features {
-    list-style: disc;
+.pack .features {
     font-size: 0.9rem;
     color: var(--text-light);
     padding-left: 20px;
 }
 
-.offer .features li {
-    margin: 9px 0;
+.pack .features li {
+    margin: 10px 0;
 }
 
 .purchase-btn {
@@ -228,7 +150,7 @@ section h1 {
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border: none;
-    border-radius: 5px;
+    border-radius: 2.5px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -240,72 +162,46 @@ section h1 {
     background-color: var(--highlight);
 }
 
-@media (max-width: 1024px) {
-    .head {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    section {
-        margin: 8rem 0;
-    }
-
-    .offer {
-        max-width: 300px;
-    }
+/** Reviews Section **/
+.reviews {
+    height: 8rem;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px 8px;
 }
 
-@media (max-width: 768px) {
-    .head {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        padding: 8px;
-    }
-
-    .head a {
-        margin: 5px 0;
-        font-size: 0.8rem;
-    }
-
-    section {
-        margin: 8rem 0;
-    }
-
-    .offer {
-        width: 100%;
-    }
-
-    .offer .title {
-        font-size: 1.1rem;
-    }
-
-    .offer .features {
-        font-size: 0.85rem;
-    }
+.reviews .btn {
+    padding: 16px;
+    border-radius: 4px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    border: none;
+    margin: 0 0.2rem;
 }
 
-@media (max-width: 480px) {
-    .head {
-        display: none;
-        flex-direction: column;
-        padding: 10px;
-    }
+.reviews img {
+    width: 30vw;
+    height: 100%;
+    border-radius: 8px;
+}
 
-    .head a {
-        font-size: 0.9rem;
-    }
+/** FAQ Section **/
+section {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .offer .title {
-        font-size: 1rem;
-    }
-
-    .offer .features {
-        font-size: 0.8rem;
-    }
-
-    .btn.purchase-btn {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
+details {
+    margin: 5px 0;
+    background-color: #171614;
+    border-radius: 2px;
+    padding: 10px;
+    cursor: pointer;
 }

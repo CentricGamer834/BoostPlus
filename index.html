@@ -3,52 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="centric" />
+        <meta property="og:title" content="Uplift" />
         <meta
-            name="description"
+            property="og:description"
             content="Level lifting, account modding, money boosts, and more for GTA Online!"
         />
-        <meta
-            name="keywords"
-            content="GTA, money, modding, mod, modder, lift, lifting, level, lifter, boost, levels, RP, offers"
-        />
-        <meta name="robots" content="index, follow" />
+        <meta property="og:image" content="assets/images/ultimate.png" />
+
         <meta name="theme-color" content="#282828" />
         <link rel="icon" href="assets/images/icon.png" />
-        <link rel="apple-touch-icon" href="assets/images/icon.png" />
         <link rel="stylesheet" href="main.css" />
+
         <link
             rel="preload"
-            href="./assets/fonts/pricedown_bl.ttf"
+            href="assets/fonts/pricedown_bl.ttf"
             as="font"
             type="font/ttf"
         />
         <link
             rel="preload"
-            href="./assets/fonts/Montserrat-VariableFont_wght.ttf"
+            href="assets/fonts/Montserrat-VariableFont_wght.ttf"
             as="font"
             type="font/ttf"
         />
-        <title>Boost+</title>
+        <title>Uplift</title>
     </head>
     <body>
         <header>
             <a href="#offers">Offers</a>
-            <a href="#reviews">FAQ</a>
+            <a href="#faq">FAQ</a>
             <a href="#reviews">Reviews</a>
-            <a href="#" onclick="redirect()" class="discord btn"> Discord </a>
+            <a href="#" class="discord btn">Discord</a>
         </header>
-        <section>
+        <section id="offers">
             <h1>GTA Online PC Packages</h1>
-            <div class="offers">
-                <div class="offer">
-                    <div class="pkg">
-                        <span class="desc">Basic</span>
+            <div class="packages">
+                <div class="pack">
+                    <div class="title">
+                        Basic
                         <span class="price">$10.00</span>
                     </div>
                     <ul class="features">
                         <li>💲 $15,000,000</li>
                         <li>🌐 Any level 1-1000</li>
+                        <li>🚗 1 modded car</li>
                         <li
                             title="Awards
 Max Character Stats
@@ -65,21 +63,18 @@ Ammu-Nation Tints"
                         >
                             <u>🔓 All unlocks</u>
                         </li>
-
-                        <li>🚗 1 modded car</li>
                     </ul>
-                    <button class="btn purchase-btn" onclick="redirect()">
-                        Purchase
-                    </button>
+                    <button class="btn purchase-btn">Purchase</button>
                 </div>
-                <div class="offer">
-                    <div class="pkg">
-                        <span class="desc">Regular</span>
+                <div class="pack">
+                    <div class="title">
+                        Regular
                         <span class="price">$15.00</span>
                     </div>
                     <ul class="features">
                         <li>💲 $40,000,000</li>
                         <li>🌐 Any level 1-3000</li>
+                        <li>🚗 2 modded cars</li>
                         <li
                             title="Awards
 Max Character Stats
@@ -96,21 +91,18 @@ Ammu-Nation Tints"
                         >
                             <u>🔓 All unlocks</u>
                         </li>
-
-                        <li>🚗 2 modded cars</li>
                     </ul>
-                    <button class="btn purchase-btn" onclick="redirect()">
-                        Purchase
-                    </button>
+                    <button class="btn purchase-btn">Purchase</button>
                 </div>
-                <div class="offer">
-                    <div class="pkg">
-                        <span class="desc">Ultimate</span>
+                <div class="pack">
+                    <div class="title">
+                        Ultimate
                         <span class="price">$20.00</span>
                     </div>
                     <ul class="features">
                         <li>💲 $70,000,000</li>
                         <li>🌐 Any level 1-8000</li>
+                        <li>🚗 3 modded cars</li>
                         <li
                             title="Awards
 Max Character Stats
@@ -127,27 +119,20 @@ Ammu-Nation Tints"
                         >
                             <u>🔓 All unlocks</u>
                         </li>
-                        <li>🚗 3 modded cars</li>
                     </ul>
-                    <button class="btn purchase-btn" onclick="redirect()">
-                        Purchase
-                    </button>
+                    <button class="btn purchase-btn">Purchase</button>
                 </div>
             </div>
         </section>
-        <section>
+        <section id="reviews">
             <h1>Reviews</h1>
-            <div class="switcher">
+            <div class="reviews">
                 <button class="btn" id="previous">&lt;</button>
-                <img
-                    class="review"
-                    id="review"
-                    src="assets/images/reviews/0.png"
-                />
+                <img src="assets/images/reviews/1.png" alt="Review" id="review">
                 <button class="btn" id="next">&gt;</button>
             </div>
         </section>
-        <section class="faq" id="faq">
+        <section id="faq">
             <h1>Frequently Asked Questions</h1>
             <details>
                 <summary>How long does it take?</summary>
@@ -168,6 +153,7 @@ Ammu-Nation Tints"
                 The whole process is streamed live on Discord. You can watch it
             </details>
         </section>
+
         <script src="main.js"></script>
     </body>
 </html>
